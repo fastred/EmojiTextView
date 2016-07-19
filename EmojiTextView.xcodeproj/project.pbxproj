@@ -7,15 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6199A951D3E61E10067BC74 /* TextHighlighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6199A941D3E61E10067BC74 /* TextHighlighting.swift */; };
+		A6199A961D3E63DF0067BC74 /* TextHighlighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6199A941D3E61E10067BC74 /* TextHighlighting.swift */; };
+		A69698BA1D3FDCA10096251D /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698B91D3FDCA10096251D /* UIColor+Interpolation.swift */; };
+		A69698BB1D3FDD770096251D /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698B91D3FDCA10096251D /* UIColor+Interpolation.swift */; };
+		A69698BD1D4019B10096251D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698BC1D4019B10096251D /* Match.swift */; };
+		A69698BE1D401A470096251D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698BC1D4019B10096251D /* Match.swift */; };
+		A69698C01D401DA80096251D /* GradientTextHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698BF1D401DA80096251D /* GradientTextHighlighter.swift */; };
+		A69698C11D401DAB0096251D /* GradientTextHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698BF1D401DA80096251D /* GradientTextHighlighter.swift */; };
+		A69698C51D4021680096251D /* AttributedStringAnnotator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698C41D4021680096251D /* AttributedStringAnnotator.swift */; };
+		A69698C61D4021900096251D /* AttributedStringAnnotator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698C41D4021680096251D /* AttributedStringAnnotator.swift */; };
+		A69698C81D40227E0096251D /* NSString+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698C71D40227E0096251D /* NSString+Range.swift */; };
+		A69698C91D40229F0096251D /* NSString+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698C71D40227E0096251D /* NSString+Range.swift */; };
+		A6A628ED1D3EC72400D9FD19 /* NSRange+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A628EC1D3EC72400D9FD19 /* NSRange+Hashable.swift */; };
+		A6A628EE1D3EC73200D9FD19 /* NSRange+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A628EC1D3EC72400D9FD19 /* NSRange+Hashable.swift */; };
+		A6A628F01D3EC7CC00D9FD19 /* TextToEmojiMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */; };
+		A6A628F11D3EC7E000D9FD19 /* TextToEmojiMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */; };
 		A6E5F2721D3AF09300879E2A /* EmojiTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = A6E5F2711D3AF09300879E2A /* EmojiTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6E5F2801D3AF15E00879E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5F27F1D3AF15E00879E2A /* AppDelegate.swift */; };
 		A6E5F2821D3AF15E00879E2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5F2811D3AF15E00879E2A /* ViewController.swift */; };
 		A6E5F2851D3AF15E00879E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E5F2831D3AF15E00879E2A /* Main.storyboard */; };
 		A6E5F2871D3AF15E00879E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E5F2861D3AF15E00879E2A /* Assets.xcassets */; };
 		A6E5F28A1D3AF15E00879E2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E5F2881D3AF15E00879E2A /* LaunchScreen.storyboard */; };
+		A6E5F2901D3BE89900879E2A /* EmojiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5F28F1D3BE89900879E2A /* EmojiController.swift */; };
+		A6E5F2911D3BE90900879E2A /* EmojiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5F28F1D3BE89900879E2A /* EmojiController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6199A941D3E61E10067BC74 /* TextHighlighting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextHighlighting.swift; sourceTree = "<group>"; };
+		A69698B91D3FDCA10096251D /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
+		A69698BC1D4019B10096251D /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		A69698BF1D401DA80096251D /* GradientTextHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientTextHighlighter.swift; sourceTree = "<group>"; };
+		A69698C41D4021680096251D /* AttributedStringAnnotator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringAnnotator.swift; sourceTree = "<group>"; };
+		A69698C71D40227E0096251D /* NSString+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Range.swift"; sourceTree = "<group>"; };
+		A6A628EC1D3EC72400D9FD19 /* NSRange+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+Hashable.swift"; sourceTree = "<group>"; };
+		A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToEmojiMapping.swift; sourceTree = "<group>"; };
 		A6E5F26E1D3AF09300879E2A /* EmojiTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmojiTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E5F2711D3AF09300879E2A /* EmojiTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmojiTextView.h; sourceTree = "<group>"; };
 		A6E5F2731D3AF09300879E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -26,6 +52,7 @@
 		A6E5F2861D3AF15E00879E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6E5F2891D3AF15E00879E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6E5F28B1D3AF15E00879E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6E5F28F1D3BE89900879E2A /* EmojiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +95,15 @@
 			isa = PBXGroup;
 			children = (
 				A6E5F2711D3AF09300879E2A /* EmojiTextView.h */,
+				A6E5F28F1D3BE89900879E2A /* EmojiController.swift */,
+				A69698BC1D4019B10096251D /* Match.swift */,
+				A6199A941D3E61E10067BC74 /* TextHighlighting.swift */,
+				A69698BF1D401DA80096251D /* GradientTextHighlighter.swift */,
+				A69698C41D4021680096251D /* AttributedStringAnnotator.swift */,
+				A6A628EC1D3EC72400D9FD19 /* NSRange+Hashable.swift */,
+				A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */,
+				A69698B91D3FDCA10096251D /* UIColor+Interpolation.swift */,
+				A69698C71D40227E0096251D /* NSString+Range.swift */,
 				A6E5F2731D3AF09300879E2A /* Info.plist */,
 			);
 			path = EmojiTextView;
@@ -150,6 +186,7 @@
 					};
 					A6E5F27C1D3AF15E00879E2A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = JNVZW2VES4;
 					};
 				};
 			};
@@ -197,6 +234,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A628ED1D3EC72400D9FD19 /* NSRange+Hashable.swift in Sources */,
+				A69698BA1D3FDCA10096251D /* UIColor+Interpolation.swift in Sources */,
+				A6199A951D3E61E10067BC74 /* TextHighlighting.swift in Sources */,
+				A6E5F2901D3BE89900879E2A /* EmojiController.swift in Sources */,
+				A69698C01D401DA80096251D /* GradientTextHighlighter.swift in Sources */,
+				A6A628F01D3EC7CC00D9FD19 /* TextToEmojiMapping.swift in Sources */,
+				A69698BD1D4019B10096251D /* Match.swift in Sources */,
+				A69698C81D40227E0096251D /* NSString+Range.swift in Sources */,
+				A69698C51D4021680096251D /* AttributedStringAnnotator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +250,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69698BB1D3FDD770096251D /* UIColor+Interpolation.swift in Sources */,
+				A6A628EE1D3EC73200D9FD19 /* NSRange+Hashable.swift in Sources */,
+				A69698C91D40229F0096251D /* NSString+Range.swift in Sources */,
+				A6199A961D3E63DF0067BC74 /* TextHighlighting.swift in Sources */,
+				A69698BE1D401A470096251D /* Match.swift in Sources */,
 				A6E5F2821D3AF15E00879E2A /* ViewController.swift in Sources */,
+				A6A628F11D3EC7E000D9FD19 /* TextToEmojiMapping.swift in Sources */,
 				A6E5F2801D3AF15E00879E2A /* AppDelegate.swift in Sources */,
+				A6E5F2911D3BE90900879E2A /* EmojiController.swift in Sources */,
+				A69698C11D401DAB0096251D /* GradientTextHighlighter.swift in Sources */,
+				A69698C61D4021900096251D /* AttributedStringAnnotator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +380,7 @@
 		A6E5F2771D3AF09300879E2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -336,12 +392,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.EmojiTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A6E5F2781D3AF09300879E2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -360,8 +418,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,8 +431,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +468,7 @@
 				A6E5F28E1D3AF15E00879E2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
