@@ -41,6 +41,7 @@ public class GradientTextHighlighter: TextHighlighting {
 
     private func stopDisplayLink() {
         displayLink?.removeFromRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+        displayLink = nil
     }
 
     @objc private func displayLinkDidFire(displayLink: CADisplayLink) {
