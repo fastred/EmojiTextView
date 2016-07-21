@@ -66,7 +66,9 @@ public class GradientTextHighlighter: TextHighlighting {
             let safeRange = NSIntersectionRange(letterRange, string.range)
 
             mutableAttributed.addAttribute(NSForegroundColorAttributeName, value: color, range: safeRange)
+            let selectedRange = textView.selectedRange
             textView.attributedText = mutableAttributed.copy() as! NSAttributedString
+            textView.selectedRange = selectedRange
 
             if i == range.length - 1 && progress >= 1.0 {
                 stopDisplayLink()
