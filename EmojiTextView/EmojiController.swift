@@ -34,7 +34,6 @@ final public class EmojiController: NSObject {
     }()
 
     public init(textView: UITextView) {
-        // TODO: enable only when the emoji keyboard is selected?
         self.textView = textView
         self.tapRecognizer = UITapGestureRecognizer()
         self.annotator = AttributedStringAnnotator(mapping: mapping, defaultAttributes: defaultAttributes, annotationKey: self.dynamicType.emojiKey)

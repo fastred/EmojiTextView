@@ -19,6 +19,8 @@
 		A69698C61D4021900096251D /* AttributedStringAnnotator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698C41D4021680096251D /* AttributedStringAnnotator.swift */; };
 		A69698C81D40227E0096251D /* NSString+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698C71D40227E0096251D /* NSString+Range.swift */; };
 		A69698C91D40229F0096251D /* NSString+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698C71D40227E0096251D /* NSString+Range.swift */; };
+		A69698D71D40C2050096251D /* emojis.json in Resources */ = {isa = PBXBuildFile; fileRef = A69698D61D40C2050096251D /* emojis.json */; };
+		A69698D81D40C4EA0096251D /* emojis.json in Resources */ = {isa = PBXBuildFile; fileRef = A69698D61D40C2050096251D /* emojis.json */; };
 		A6A628ED1D3EC72400D9FD19 /* NSRange+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A628EC1D3EC72400D9FD19 /* NSRange+Hashable.swift */; };
 		A6A628EE1D3EC73200D9FD19 /* NSRange+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A628EC1D3EC72400D9FD19 /* NSRange+Hashable.swift */; };
 		A6A628F01D3EC7CC00D9FD19 /* TextToEmojiMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */; };
@@ -40,6 +42,7 @@
 		A69698BF1D401DA80096251D /* GradientTextHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientTextHighlighter.swift; sourceTree = "<group>"; };
 		A69698C41D4021680096251D /* AttributedStringAnnotator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringAnnotator.swift; sourceTree = "<group>"; };
 		A69698C71D40227E0096251D /* NSString+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Range.swift"; sourceTree = "<group>"; };
+		A69698D61D40C2050096251D /* emojis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emojis.json; sourceTree = "<group>"; };
 		A6A628EC1D3EC72400D9FD19 /* NSRange+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+Hashable.swift"; sourceTree = "<group>"; };
 		A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToEmojiMapping.swift; sourceTree = "<group>"; };
 		A6E5F26E1D3AF09300879E2A /* EmojiTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmojiTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,14 +97,15 @@
 		A6E5F2701D3AF09300879E2A /* EmojiTextView */ = {
 			isa = PBXGroup;
 			children = (
+				A69698D61D40C2050096251D /* emojis.json */,
 				A6E5F2711D3AF09300879E2A /* EmojiTextView.h */,
 				A6E5F28F1D3BE89900879E2A /* EmojiController.swift */,
 				A69698BC1D4019B10096251D /* Match.swift */,
 				A6199A941D3E61E10067BC74 /* TextHighlighting.swift */,
 				A69698BF1D401DA80096251D /* GradientTextHighlighter.swift */,
+				A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */,
 				A69698C41D4021680096251D /* AttributedStringAnnotator.swift */,
 				A6A628EC1D3EC72400D9FD19 /* NSRange+Hashable.swift */,
-				A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */,
 				A69698B91D3FDCA10096251D /* UIColor+Interpolation.swift */,
 				A69698C71D40227E0096251D /* NSString+Range.swift */,
 				A6E5F2731D3AF09300879E2A /* Info.plist */,
@@ -214,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69698D71D40C2050096251D /* emojis.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69698D81D40C4EA0096251D /* emojis.json in Resources */,
 				A6E5F28A1D3AF15E00879E2A /* LaunchScreen.storyboard in Resources */,
 				A6E5F2871D3AF15E00879E2A /* Assets.xcassets in Resources */,
 				A6E5F2851D3AF15E00879E2A /* Main.storyboard in Resources */,
