@@ -32,7 +32,17 @@ That's it! 🎉
 
 ## Installation
 
-Coming soon!
+EmojiTextView is available through [CocoaPods](http://cocoapods.org). To install it simply add the following line to your Podfile:
+
+```
+pod "EmojiTextView", "0.0.1"
+```
+
+Then you can import it with:
+
+```swift
+import EmojiTextView
+```
 
 ## Requirements
 
