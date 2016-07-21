@@ -49,7 +49,7 @@
 		A6A628EF1D3EC7CC00D9FD19 /* TextToEmojiMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToEmojiMapping.swift; sourceTree = "<group>"; };
 		A6E5F26E1D3AF09300879E2A /* EmojiTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmojiTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E5F2711D3AF09300879E2A /* EmojiTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmojiTextView.h; sourceTree = "<group>"; };
-		A6E5F27D1D3AF15E00879E2A /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6E5F27D1D3AF15E00879E2A /* EmojiExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E5F27F1D3AF15E00879E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6E5F2811D3AF15E00879E2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6E5F2841D3AF15E00879E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A6E5F26E1D3AF09300879E2A /* EmojiTextView.framework */,
-				A6E5F27D1D3AF15E00879E2A /* Example.app */,
+				A6E5F27D1D3AF15E00879E2A /* EmojiExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,9 +175,9 @@
 			productReference = A6E5F26E1D3AF09300879E2A /* EmojiTextView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A6E5F27C1D3AF15E00879E2A /* Example */ = {
+		A6E5F27C1D3AF15E00879E2A /* EmojiExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6E5F28C1D3AF15E00879E2A /* Build configuration list for PBXNativeTarget "Example" */;
+			buildConfigurationList = A6E5F28C1D3AF15E00879E2A /* Build configuration list for PBXNativeTarget "EmojiExample" */;
 			buildPhases = (
 				A6E5F2791D3AF15E00879E2A /* Sources */,
 				A6E5F27A1D3AF15E00879E2A /* Frameworks */,
@@ -187,9 +187,9 @@
 			);
 			dependencies = (
 			);
-			name = Example;
+			name = EmojiExample;
 			productName = Example;
-			productReference = A6E5F27D1D3AF15E00879E2A /* Example.app */;
+			productReference = A6E5F27D1D3AF15E00879E2A /* EmojiExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -225,7 +225,7 @@
 			projectRoot = "";
 			targets = (
 				A6E5F26D1D3AF09300879E2A /* EmojiTextView */,
-				A6E5F27C1D3AF15E00879E2A /* Example */,
+				A6E5F27C1D3AF15E00879E2A /* EmojiExample */,
 			);
 		};
 /* End PBXProject section */
@@ -485,7 +485,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6E5F28C1D3AF15E00879E2A /* Build configuration list for PBXNativeTarget "Example" */ = {
+		A6E5F28C1D3AF15E00879E2A /* Build configuration list for PBXNativeTarget "EmojiExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6E5F28D1D3AF15E00879E2A /* Debug */,
