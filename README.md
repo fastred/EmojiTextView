@@ -26,8 +26,8 @@ That's it! 🎉
 
 `EmojiController` provides three points of customization through properties:
 
-- `mapping` – contains a mapping from words to array of emojis
-- `textHighlightingFactory` – creates a new instance of an object conforming to `TextHighlighting` protocol; each instance of that object is reponsible for highlighting a single word
+- `mapping` – contains a mapping from words to an array of emojis
+- `textHighlightingFactory` – creates a new instance of an object conforming to `TextHighlighting` protocol; each instance of that object is responsible for highlighting a single word
 - `defaultAttributes` - attributes (as in `NSAttributedString`) of a text that's not replaceable with emoji
 
 ## Installation
@@ -40,7 +40,7 @@ iOS 9 and above.
 
 ## Future Improvements
 
-- Should the emoji replacement be enabled only when the emoji keyboard is selected? It probably requires use of the private API as `UITextInputMode` doesn't help here.
+- Should the emoji replacement be enabled only when the emoji keyboard is selected? It probably requires the use of the private API as `UITextInputMode` doesn't help here.
 - If there's more than one emoji match for a given word there should be an ability to choose which one we want to use.
 - **(EASY)** There should be an option to switch back from an emoji to the full word. Hint: add an attribute with the original word to the part of the string replaced by an emoji.
 
