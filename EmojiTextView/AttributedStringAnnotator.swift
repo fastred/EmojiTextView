@@ -20,6 +20,7 @@ final class AttributedStringAnnotator {
         self.annotationKey = annotationKey
     }
 
+    // Returns the string with annotationKey annotation for words that can be replaced with emojis.
     func annotateAttributedStringFromAttributedString(attributedString: NSAttributedString) -> (NSAttributedString, Bool) {
 
         let string = attributedString.string as NSString
@@ -32,12 +33,13 @@ final class AttributedStringAnnotator {
         string.enumerateSubstringsInRange(string.range, options: .ByWords) { (substring, substringRange, enclosingRange, stop) in
 
             if let substring = substring,
-                let mapped = self.mapping[(substring as NSString).lowercaseString] {
+               let mapped = self.mapping[(substring as NSString).lowercaseString]?.first {
+
                 let match = Match(string: substring, emoji: mapped)
                 rangeToMatchMap[substringRange] = match
-
+                
                 let existingAttribute = mutable.attribute(self.annotationKey, atIndex: substringRange.location, effectiveRange: nil)
-
+                
                 if existingAttribute == nil {
                     mutable.addAttribute(self.annotationKey, value: match, range: substringRange)
                 }
