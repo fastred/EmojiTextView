@@ -1,16 +1,53 @@
 # EmojiTextView
-Text view with easy emoji input inspired by iOS 10's Messages.app.
 
+Tap to swap out words with emojis. Works with any `UITextView`. Heavily inspired by Messages.app on iOS 10.
 
+Created by [Arkadiusz Holko][holko] ([@arekholko][twitter]).
 
-## Future Improvements:
+![Demo GIF](https://raw.githubusercontent.com/fastred/EmojiTextView/master/demo.gif)
 
-- [ ] Should the emoji replacement be enabled only when the emoji keyboard is selected? It probably requires use of the private API as `UITextInputMode` doesn't help here.
-- [ ] If there's more than one emoji match for a given word there should be ability to choose which one we want to use.
-- [ ] **(EASY)** There should be an option to switch back from an emoji to the full word. Hint: add an attribute with the original word to the part of the string replaced by an emoji.
+## Usage
+
+Add a property of `EmojiController` type to a class that holds your `UITextView` instance, e.g. a view controller:
+
+```swift
+var emojiController: EmojiController?
+```
+
+Then, initialize `EmojiController` by passing it your text view (e.g. in `viewDidLoad()`):
+
+```swift
+emojiController = EmojiController(textView: textView)
+```
+
+That's it! 🎉
+
+## Customization
+
+`EmojiController` provides three points of customization through properties:
+
+- `mapping` – contains a mapping from words to array of emojis
+- `textHighlightingFactory` – creates a new instance of an object conforming to `TextHighlighting` protocol; each instance of that object is reponsible for highlighting a single word
+- `defaultAttributes` - attributes (as in `NSAttributedString`) of a text that's not replaceable with emoji
+
+## Installation
+
+Coming soon!
+
+## Requirements
+
+iOS 9 and above.
+
+## Future Improvements
+
+- Should the emoji replacement be enabled only when the emoji keyboard is selected? It probably requires use of the private API as `UITextInputMode` doesn't help here.
+- If there's more than one emoji match for a given word there should be an ability to choose which one we want to use.
+- **(EASY)** There should be an option to switch back from an emoji to the full word. Hint: add an attribute with the original word to the part of the string replaced by an emoji.
 
 ## Credits
 
 - Emoji keyword library is based on [emojilib][emojilib].
 
 [emojilib]: https://github.com/muan/emojilib
+[holko]: http://holko.pl
+[twitter]: https://twitter.com/arekholko
