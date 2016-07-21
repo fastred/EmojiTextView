@@ -23,11 +23,12 @@ public func defaultTextToEmojiMapping() -> TextToEmojiMapping {
 
         if mapping[key] == nil {
             mapping[key] = []
-            if atBeginning {
-                mapping[key]?.insert(value, atIndex: 0)
-            } else {
-                mapping[key]?.append(value)
-            }
+        }
+
+        if atBeginning {
+            mapping[key]?.insert(value, atIndex: 0)
+        } else {
+            mapping[key]?.append(value)
         }
     }
 
