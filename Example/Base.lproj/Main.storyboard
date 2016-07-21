@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CRe-QJ-EvH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--EmojiTextView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EmojiExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,28 +17,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor heart sit er elit lamet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qtw-EA-oaw">
-                                <rect key="frame" x="20" y="20" width="256" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qtw-EA-oaw">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ovw-l8-d9c"/>
+                                    <constraint firstAttribute="height" constant="90" id="ovw-l8-d9c"/>
                                     <constraint firstAttribute="width" constant="256" id="sft-yJ-6kP"/>
                                 </constraints>
+                                <string key="text">EmojiTextView allows you to swap out words with emoji with a simple tap. Words that can be replaced are highlighted, like this: Apple, iPhone.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ovw-l8-d9c"/>
+                                        <exclude reference="sft-yJ-6kP"/>
+                                    </mask>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qtw-EA-oaw" secondAttribute="bottom" id="B4z-lv-FkQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qtw-EA-oaw" secondAttribute="trailing" id="IgO-Sg-FAw"/>
                             <constraint firstItem="Qtw-EA-oaw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Lxy-s9-vLQ"/>
+                            <constraint firstItem="Qtw-EA-oaw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Tw8-Qx-0if"/>
                             <constraint firstItem="Qtw-EA-oaw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="U8P-CH-gfj"/>
+                            <constraint firstItem="Qtw-EA-oaw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zpy-N3-4Cw"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lxy-s9-vLQ"/>
+                                <exclude reference="U8P-CH-gfj"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="EmojiTextView" id="vRe-6D-Y8z"/>
                     <connections>
                         <outlet property="textView" destination="Qtw-EA-oaw" id="ucK-aK-MaE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="649"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4u4-4D-rxj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CRe-QJ-EvH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cin-st-npT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="peB-Iy-Ign"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5m6-sh-Xiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="649"/>
         </scene>
