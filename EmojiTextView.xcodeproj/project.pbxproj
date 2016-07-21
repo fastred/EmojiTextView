@@ -19,7 +19,6 @@
 		A69698E91D40DE950096251D /* NSString+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698E61D40DE950096251D /* NSString+Range.swift */; };
 		A69698EA1D40DE950096251D /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698E71D40DE950096251D /* UIColor+Interpolation.swift */; };
 		A69698ED1D40DE9E0096251D /* emojis.json in Resources */ = {isa = PBXBuildFile; fileRef = A69698EB1D40DE9E0096251D /* emojis.json */; };
-		A69698EE1D40DE9E0096251D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A69698EC1D40DE9E0096251D /* Info.plist */; };
 		A69698EF1D40DEAB0096251D /* NSRange+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698E51D40DE950096251D /* NSRange+Hashable.swift */; };
 		A69698F01D40DEAD0096251D /* NSString+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698E61D40DE950096251D /* NSString+Range.swift */; };
 		A69698F11D40DEAF0096251D /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69698E71D40DE950096251D /* UIColor+Interpolation.swift */; };
@@ -235,7 +234,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69698EE1D40DE9E0096251D /* Info.plist in Resources */,
 				A69698ED1D40DE9E0096251D /* emojis.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = Example/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.Example;
@@ -456,7 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = Example/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.Example;
