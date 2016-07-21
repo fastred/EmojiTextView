@@ -33,8 +33,8 @@ public func defaultTextToEmojiMapping() -> TextToEmojiMapping {
 
     guard let path = NSBundle(forClass: EmojiController.self).pathForResource("emojis", ofType: "json"),
         let data = NSData(contentsOfFile: path),
-        let jsonAny = try? NSJSONSerialization.JSONObjectWithData(data, options: []),
-        let jsonDictionary = jsonAny as? NSDictionary else {
+        let json = try? NSJSONSerialization.JSONObjectWithData(data, options: []),
+        let jsonDictionary = json as? NSDictionary else {
             return [:]
     }
 

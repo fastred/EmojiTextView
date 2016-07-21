@@ -26,6 +26,8 @@ public class GradientTextHighlighter: TextHighlighting {
         self.range = range
         self.completion = completion
 
+        // Animation of text on iOS is in the dire state. There doesn't seem to any other way of animating text
+        // that works with the default stack of UITextView.
         displayLink = CADisplayLink(target: self, selector: #selector(displayLinkDidFire(_:)))
         displayLink?.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
         startTime = CACurrentMediaTime()
