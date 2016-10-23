@@ -15,9 +15,9 @@ public func defaultTextToEmojiMapping() -> TextToEmojiMapping {
 
     var mapping: TextToEmojiMapping = [:]
 
-    func addKey(key: String, value: String, atBeginning: Bool) {
+    func addKey(_ key: String, value: String, atBeginning: Bool) {
         // ignore short words because they're non-essential
-        guard key.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 2 else {
+        guard key.lengthOfBytes(using: String.Encoding.utf8) > 2 else {
             return
         }
 
@@ -26,15 +26,15 @@ public func defaultTextToEmojiMapping() -> TextToEmojiMapping {
         }
 
         if atBeginning {
-            mapping[key]?.insert(value, atIndex: 0)
+            mapping[key]?.insert(value, at: 0)
         } else {
             mapping[key]?.append(value)
         }
     }
 
-    guard let path = NSBundle(forClass: EmojiController.self).pathForResource("emojis", ofType: "json"),
-        let data = NSData(contentsOfFile: path),
-        let json = try? NSJSONSerialization.JSONObjectWithData(data, options: []),
+    guard let path = Bundle(for: EmojiController.self).path(forResource: "emojis", ofType: "json"),
+        let data = try? Data(contentsOf: URL(fileURLWithPath: path)),
+        let json = try? JSONSerialization.jsonObject(with: data, options: []),
         let jsonDictionary = json as? NSDictionary else {
             return [:]
     }

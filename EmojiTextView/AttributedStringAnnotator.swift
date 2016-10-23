@@ -21,24 +21,24 @@ final class AttributedStringAnnotator {
     }
 
     // Returns the string with annotationKey annotation for words that can be replaced with emojis.
-    func annotateAttributedStringFromAttributedString(attributedString: NSAttributedString) -> (NSAttributedString, Bool) {
+    func annotatedAttributedString(fromAttributedString: NSAttributedString) -> (NSAttributedString, Bool) {
 
-        let string = attributedString.string as NSString
-        let mutable = attributedString.mutableCopy() as! NSMutableAttributedString
+        let string = fromAttributedString.string as NSString
+        let mutable = fromAttributedString.mutableCopy() as! NSMutableAttributedString
 
         var rangeToMatchMap: [NSRange : Match] = [:]
         var shouldCancelRunningHighlighter = false
 
         // Adds annotationKey attribute to all words in the string that can be replaced with emojis.
-        string.enumerateSubstringsInRange(string.range, options: .ByWords) { (substring, substringRange, enclosingRange, stop) in
+        string.enumerateSubstrings(in: string.range, options: .byWords) { (substring, substringRange, enclosingRange, stop) in
 
             if let substring = substring,
-               let mapped = self.mapping[(substring as NSString).lowercaseString]?.first {
+               let mapped = self.mapping[(substring as NSString).lowercased]?.first {
 
-                let match = Match(string: substring, emoji: mapped)
+                let match = Match(string: substring as NSString, emoji: mapped as NSString)
                 rangeToMatchMap[substringRange] = match
                 
-                let existingAttribute = mutable.attribute(self.annotationKey, atIndex: substringRange.location, effectiveRange: nil)
+                let existingAttribute = mutable.attribute(self.annotationKey, at: substringRange.location, effectiveRange: nil)
                 
                 if existingAttribute == nil {
                     mutable.addAttribute(self.annotationKey, value: match, range: substringRange)
@@ -47,11 +47,11 @@ final class AttributedStringAnnotator {
         }
 
         // Removes annotationKey attribute from parts of the string that were replaceable with emoji but aren't anymore.
-        mutable.enumerateAttribute(annotationKey, inRange: string.range, options: []) { (value, range, stop) in
+        mutable.enumerateAttribute(annotationKey, in: string.range, options: []) { (value, range, stop) in
             guard let match = value as? Match else { return }
 
             if rangeToMatchMap[range] == nil {
-                if match.transitionState == .Running {
+                if match.transitionState == .running {
                     shouldCancelRunningHighlighter = true
                 }
 
@@ -61,7 +61,7 @@ final class AttributedStringAnnotator {
 
         // Sets default formatting for parts of the string that don't have annotationKey attribute associated with them.
         for i in 0..<string.length {
-            if mutable.attribute(annotationKey, atIndex: i, effectiveRange: nil) == nil {
+            if mutable.attribute(annotationKey, at: i, effectiveRange: nil) == nil {
                 let safeRange = NSIntersectionRange(NSMakeRange(i, 1), string.range)
                 mutable.addAttributes(defaultAttributes, range: safeRange)
             }

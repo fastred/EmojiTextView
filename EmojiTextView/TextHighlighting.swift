@@ -13,7 +13,7 @@ import UIKit
 public protocol TextHighlighting {
 
     // Highlights range of text in the text view that's replaceable with an emoji. completion closure has to be called when the highlighting finishes.
-    func highlightRange(range: NSRange, inTextView textView: UITextView, completion: (finished: Bool) -> ())
+    func highlight(range: NSRange, inTextView textView: UITextView, completion: @escaping (_ finished: Bool) -> ())
 
     // Cancels highlighting that's in progress
     func cancel()
