@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "EmojiTextView"
-  spec.version = "0.0.1"
+  spec.version = "1.0"
   spec.summary = "Tap to swap out words with emojis. Inspired by Messages.app on iOS 10."
   spec.homepage = "https://github.com/fastred/EmojiTextView"
   spec.screenshot = "https://raw.githubusercontent.com/fastred/EmojiTextView/master/demo.gif"
