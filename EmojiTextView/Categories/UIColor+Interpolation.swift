@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    func interpolateColorTo(endColor: UIColor, progress: CGFloat) -> UIColor {
+    func interpolateColorTo(_ endColor: UIColor, progress: CGFloat) -> UIColor {
         var f = max(0, progress)
         f = min(1, progress)
 

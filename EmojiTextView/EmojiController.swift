@@ -12,16 +12,16 @@ import UIKit
 
 final public class EmojiController: NSObject {
 
-    private let textView: UITextView
-    private let tapRecognizer: UITapGestureRecognizer
-    private var annotator: AttributedStringAnnotator
-    private static let emojiKey = "EmojiTextViewKey"
+    fileprivate let textView: UITextView
+    fileprivate let tapRecognizer: UITapGestureRecognizer
+    fileprivate var annotator: AttributedStringAnnotator
+    fileprivate static let emojiKey = "EmojiTextViewKey"
 
     // text to emoji mapping
     public var mapping: TextToEmojiMapping = defaultTextToEmojiMapping()
 
     // object responsible for highlighting the text that is replaceable with emoji
-    private var currentTextHighlighter: TextHighlighting?
+    fileprivate var currentTextHighlighter: TextHighlighting?
     // returns a new instance of `TextHighlighting` object
     public var textHighlightingFactory: () -> TextHighlighting = {
         return GradientTextHighlighter()
@@ -29,18 +29,18 @@ final public class EmojiController: NSObject {
 
     // NSAttributedString attributes for the regular text
     public var defaultAttributes: [String : AnyObject] = {
-        return [NSForegroundColorAttributeName : UIColor.blackColor(),
-                NSFontAttributeName : UIFont.systemFontOfSize(18)]
+        return [NSForegroundColorAttributeName : UIColor.black,
+                NSFontAttributeName : UIFont.systemFont(ofSize: 18)]
     }()
 
     public init(textView: UITextView) {
         self.textView = textView
         self.tapRecognizer = UITapGestureRecognizer()
-        self.annotator = AttributedStringAnnotator(mapping: mapping, defaultAttributes: defaultAttributes, annotationKey: self.dynamicType.emojiKey)
+        self.annotator = AttributedStringAnnotator(mapping: mapping, defaultAttributes: defaultAttributes, annotationKey: type(of: self).emojiKey)
 
         super.init()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(textDidChange(_:)), name:UITextViewTextDidChangeNotification, object: textView)
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name:NSNotification.Name.UITextViewTextDidChange, object: textView)
 
         tapRecognizer.addTarget(self, action: #selector(didTap(_:)))
         tapRecognizer.delegate = self
@@ -54,12 +54,12 @@ final public class EmojiController: NSObject {
         currentTextHighlighter?.cancel()
     }
 
-    @objc private func textDidChange(notification: NSNotification) {
+    @objc fileprivate func textDidChange(_ notification: Notification) {
         updateAfterTextChange()
     }
 
-    private func updateAfterTextChange() {
-        let (annotatedAttributedString, shouldCancel) = annotator.annotateAttributedStringFromAttributedString(textView.attributedText)
+    fileprivate func updateAfterTextChange() {
+        let (annotatedAttributedString, shouldCancel) = annotator.annotatedAttributedString(fromAttributedString: textView.attributedText)
         if shouldCancel {
             currentTextHighlighter?.cancel()
         }
@@ -71,57 +71,57 @@ final public class EmojiController: NSObject {
         highlightIfNeeded()
     }
 
-    private func highlightIfNeeded() {
+    fileprivate func highlightIfNeeded() {
         let string = textView.attributedText.string as NSString
         var toTransition: (NSRange, Match)?
 
         // Sets toTransition with first not started match unless some transition is currently running.
-        textView.attributedText.enumerateAttribute(self.dynamicType.emojiKey, inRange: string.range, options: []) { (value, range, stop) in
+        textView.attributedText.enumerateAttribute(type(of: self).emojiKey, in: string.range, options: []) { (value, range, stop) in
 
             guard let match = value as? Match else { return }
-            if match.transitionState == .Running {
-                stop.memory = true
-            } else if match.transitionState == .NotStarted {
+            if match.transitionState == .running {
+                stop.pointee = true
+            } else if match.transitionState == .notStarted {
                 toTransition = (range, match)
-                stop.memory = true
+                stop.pointee = true
             }
         }
 
         if let (range, match) = toTransition {
             let textHighlighter = textHighlightingFactory()
             currentTextHighlighter = textHighlighter
-            match.transitionState = .Running
+            match.transitionState = .running
 
-            textHighlighter.highlightRange(range, inTextView: textView, completion: { [weak self] (finished) in
-                match.transitionState = .Completed
+            textHighlighter.highlight(range: range, inTextView: textView, completion: { [weak self] (finished) in
+                match.transitionState = .completed
                 self?.highlightIfNeeded()
             })
         }
     }
 
-    @objc private func didTap(gestureRecognizer: UITapGestureRecognizer) {
-        if let (range, match) = rangeAndMatchAtPoint(gestureRecognizer.locationInView(textView)) where match.transitionState == .Completed {
+    @objc fileprivate func didTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        if let (range, match) = rangeAndMatch(atPoint: gestureRecognizer.location(in: textView)) , match.transitionState == .completed {
             let mutable = textView.attributedText.mutableCopy() as! NSMutableAttributedString
-            mutable.replaceCharactersInRange(range, withString: match.emoji as String)
+            mutable.replaceCharacters(in: range, with: match.emoji as String)
             textView.attributedText = mutable.copy() as! NSAttributedString
 
             updateAfterTextChange()
         }
     }
 
-    private func rangeAndMatchAtPoint(point: CGPoint) -> (NSRange, Match)? {
+    fileprivate func rangeAndMatch(atPoint: CGPoint) -> (NSRange, Match)? {
         guard !textView.attributedText.string.isEmpty else {
             return nil
         }
 
         let layoutManager = textView.layoutManager
-        let characterIndex = layoutManager.characterIndexForPoint(point, inTextContainer: textView.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        let characterIndex = layoutManager.characterIndex(for: atPoint, in: textView.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
 
         var longestRange: NSRange = NSMakeRange(0, 0)
-        let attributes = textView.attributedText.attributesAtIndex(characterIndex, longestEffectiveRange: &longestRange, inRange: (textView.attributedText.string as NSString).range)
+        let attributes = textView.attributedText.attributes(at: characterIndex, longestEffectiveRange: &longestRange, in: (textView.attributedText.string as NSString).range)
 
         if NSLocationInRange(characterIndex, longestRange) {
-            if let match = attributes[self.dynamicType.emojiKey] as? Match {
+            if let match = attributes[type(of: self).emojiKey] as? Match {
                 return (longestRange, match)
             }
         }
@@ -131,14 +131,14 @@ final public class EmojiController: NSObject {
 }
 
 extension EmojiController: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 
-    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
 
         // Prevents visual glitches by disabling default UITextView's gesture recognizers
         // from working on words that can be replaced with emojis.
-        return rangeAndMatchAtPoint(gestureRecognizer.locationInView(textView)) != nil
+        return rangeAndMatch(atPoint: gestureRecognizer.location(in: textView)) != nil
     }
 }

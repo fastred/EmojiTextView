@@ -12,14 +12,14 @@ import Foundation
 class Match {
     /// State of the animated transition (highlighting).
     enum TransitionState {
-        case NotStarted
-        case Running
-        case Completed
+        case notStarted
+        case running
+        case completed
     }
 
     let string: NSString
     let emoji: NSString
-    var transitionState = TransitionState.NotStarted
+    var transitionState = TransitionState.notStarted
 
     init(string: NSString, emoji: NSString) {
         self.string = string
